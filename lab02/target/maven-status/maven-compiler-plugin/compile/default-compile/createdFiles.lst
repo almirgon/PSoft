@@ -1,0 +1,9 @@
+br\ufcg\psoft\lab02\Lab02Application.class
+br\ufcg\psoft\lab02\controllers\DisciplinaController.class
+br\ufcg\psoft\lab02\services\DisciplinaBean$1.class
+br\ufcg\psoft\lab02\dto\AtualizaNotaDto.class
+br\ufcg\psoft\lab02\repositories\DisciplinaRepository.class
+br\ufcg\psoft\lab02\services\DisciplinaBean.class
+br\ufcg\psoft\lab02\models\Disciplina.class
+br\ufcg\psoft\lab02\dto\AtualizaComentarioDto.class
+br\ufcg\psoft\lab02\services\DisciplinaService.class
