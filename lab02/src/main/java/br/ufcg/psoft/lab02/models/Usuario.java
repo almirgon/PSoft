@@ -8,7 +8,6 @@ import java.io.Serializable;
 public class Usuario implements Serializable {
 
     @Id
-    @GeneratedValue
     private String email;
 
     @Column

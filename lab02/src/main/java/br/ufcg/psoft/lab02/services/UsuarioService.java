@@ -4,8 +4,10 @@ import br.ufcg.psoft.lab02.models.Usuario;
 
 public interface UsuarioService {
 
+    Usuario buscaUsuario(String email);
+
     Usuario adicionaUsuario(Usuario usuario);
 
-    void removeUsuario(Usuario usuario);
+    void removeUsuario();
 
 }

@@ -8,6 +8,7 @@ import javassist.bytecode.ByteArray;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import javax.servlet.FilterChain;
@@ -37,7 +38,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response,
                                             FilterChain filterChain, Authentication authentication) {
-        Usuario user = ((Usuario) authentication.getPrincipal());
+        String user = (String) authentication.getPrincipal();
 
         byte[] signingKey = ConstantesSeguranca.JWT_SECRET.getBytes();
 
@@ -46,7 +47,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                 .setHeaderParam("typ", ConstantesSeguranca.TOKEN_TYPE)
                 .setIssuer(ConstantesSeguranca.TOKEN_ISSUER)
                 .setAudience(ConstantesSeguranca.TOKEN_AUDIENCE)
-                .setSubject(user.getEmail())
+                .setSubject(user)
                 .setExpiration(new Date(System.currentTimeMillis() + 864000000))
                 .compact();
 
